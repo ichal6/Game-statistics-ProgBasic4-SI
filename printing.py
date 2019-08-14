@@ -73,7 +73,8 @@ def run_function(number_of_function):
     elif number_of_function == 4:
         option_4()
     elif number_of_function == 5:
-        pass
+        user_title = input("Please insert a title by search in file: ")
+        print("Line number by title", str(reports.get_line_number_by_title(file_with_statistics, user_title)))
     elif number_of_function == 6:
         print("Not implemention, yet")
     elif number_of_function == 7:
