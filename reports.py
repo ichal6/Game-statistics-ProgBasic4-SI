@@ -53,4 +53,18 @@ def count_by_genre(file_name, genre):
     return apperance
 
 
-print(count_by_genre("game_stat.txt", "RPG"))
+def get_line_number_by_title(file_name, title):
+    list_games = open_file(file_name)
+    index = 1
+    try:
+        for game in list_games:
+            if game[0] == title:
+                return index
+            index += 1
+        raise ValueError
+    except ValueError:
+        print("Game not found. Program has been close")
+        shutdown_program()
+
+
+print(get_line_number_by_title("game_stat.txt", "sdfsdf"))
