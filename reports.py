@@ -33,4 +33,15 @@ def decide(file_name, year):
     return False
 
 
-print(decide("game_stat.txt", 1979))
+def get_latest(file_name):
+    list_games = open_file(file_name)
+    latest_year = 1
+    title_latest_game = ""
+    for game in list_games:
+        if int(game[2]) > latest_year:
+            latest_year = int(game[2])
+            title_latest_game = game[0]
+    return title_latest_game
+
+
+print(get_latest("game_stat.txt"))
