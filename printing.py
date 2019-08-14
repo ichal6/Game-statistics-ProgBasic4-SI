@@ -57,6 +57,12 @@ def option_2():
         main()
 
 
+def option_4():
+    genre_by_check = input("Please give a genre to check: ")
+    count = reports.count_by_genre(file_with_statistics, genre_by_check)  # save number of genre to count
+    print("The number of title in that genre -", str(count))
+
+
 def run_function(number_of_function):
     if number_of_function == 1:
         print("Count games in statistics -", str(reports.count_games(file_with_statistics)))
@@ -65,7 +71,7 @@ def run_function(number_of_function):
     elif number_of_function == 3:
         print("Title of the latest game is", str(reports.get_latest(file_with_statistics)))
     elif number_of_function == 4:
-        pass
+        option_4()
     elif number_of_function == 5:
         pass
     elif number_of_function == 6:
