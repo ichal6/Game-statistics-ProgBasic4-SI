@@ -35,7 +35,7 @@ def decide(file_name, year):
 
 def get_latest(file_name):
     list_games = open_file(file_name)
-    latest_year = 1
+    latest_year = 1  # start year one A. D.
     title_latest_game = ""
     for game in list_games:
         if int(game[2]) > latest_year:
@@ -44,4 +44,13 @@ def get_latest(file_name):
     return title_latest_game
 
 
-print(get_latest("game_stat.txt"))
+def count_by_genre(file_name, genre):
+    list_games = open_file(file_name)
+    apperance = 0
+    for game in list_games:
+        if game[3] == genre:
+            apperance += 1
+    return apperance
+
+
+print(count_by_genre("game_stat.txt", "RPG"))
