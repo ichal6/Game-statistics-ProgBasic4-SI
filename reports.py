@@ -61,3 +61,17 @@ def get_line_number_by_title(file_name, title):
             return index
         index += 1
     raise ValueError
+
+# bonus function
+
+
+def sort_abc(file_name):
+    pass  # to remember implementation own function sorting
+
+
+def get_genres(file_name):
+    pass
+
+
+def when_was_top_sold_fps(file_name):
+    pass
