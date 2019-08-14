@@ -1,4 +1,5 @@
 import os
+import time
 import reports
 from menu import Welcome_Message
 from menu import Menu_Chossen
@@ -42,11 +43,25 @@ def user_input():
         return False
 
 
+def option_2():
+    try:
+        year_by_check = int(input("Please give a year of publishing: "))
+        is_count = reports.decide(file_with_statistics, year_by_check)
+        if is_count:
+            print("Yes, in statistics is this game")
+        else:
+            print("No, in statisctics is any this game")
+    except ValueError:
+        print("Insert incorrect value! Return to main menu.")
+        time.sleep(2)
+        main()
+
+
 def run_function(number_of_function):
     if number_of_function == 1:
         print("Count games in statistics -", str(reports.count_games(file_with_statistics)))
     elif number_of_function == 2:
-        pass
+        option_2()
     elif number_of_function == 3:
         pass
     elif number_of_function == 4:
