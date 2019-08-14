@@ -63,7 +63,7 @@ def run_function(number_of_function):
     elif number_of_function == 2:
         option_2()
     elif number_of_function == 3:
-        pass
+        print("Title of the latest game is", str(reports.get_latest(file_with_statistics)))
     elif number_of_function == 4:
         pass
     elif number_of_function == 5:
