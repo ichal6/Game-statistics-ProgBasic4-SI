@@ -96,9 +96,13 @@ def run_function(number_of_function, file_with_statistics):
     elif number_of_function == 6:
         print("Not implemention, yet")
     elif number_of_function == 7:
-        print("Not implemention, yet")
+        list_of_genre = reports.get_genres(file_with_statistics)
+        genres = "List of genre:\n"
+        for genre in list_of_genre:
+            genres += genre + "\n"
+        return genres
     elif number_of_function == 8:
-        print("Not implemention, yet")
+        return "Release date of the top sold First-person shooter game is " + str(reports.when_was_top_sold_fps(file_with_statistics))
     elif number_of_function == 0:  # click zero to exit
         global is_exit
         is_exit = True

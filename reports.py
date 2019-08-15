@@ -70,8 +70,24 @@ def sort_abc(file_name):
 
 
 def get_genres(file_name):
-    pass
+    list_games = open_file(file_name)
+    set_genres = set({})
+    for game in list_games:
+        set_genres.add(game[3])
+    list_genres = list(sorted(set_genres))
+    return list_genres
 
 
 def when_was_top_sold_fps(file_name):
-    pass
+    list_games = open_file(file_name)
+    top_sold = 0  # start sold from 0 $
+    year_of_realse = 0  # start year from 0 A.D.
+    last_genre = ""
+    for game in list_games:
+        if float(game[1]) > top_sold:
+            top_sold = float(game[1])
+            last_genre = game[3]
+            year_of_realse = int(game[2])
+    if last_genre != "First-person shooter":
+        raise ValueError
+    return year_of_realse
