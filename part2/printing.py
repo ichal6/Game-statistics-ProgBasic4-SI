@@ -57,7 +57,7 @@ def run_function(number_of_function):
     elif number_of_function == 3:
         print("Averange sold is", str(reports.get_selling_avg(file_with_statistics)))
     elif number_of_function == 4:
-        option_4()
+        print("Characters long in the longest title is", str(reports.count_longest_title(file_with_statistics)))
     elif number_of_function == 5:
         user_title = input("Please insert a title by search in file: ")
         print("Line number by title", str(reports.get_line_number_by_title(file_with_statistics, user_title)))
