@@ -44,8 +44,7 @@ def user_input():
 
 
 def option_4():
-    genre_by_check = input("Please give a genre to check: ")
-    count = reports.count_by_genre(file_with_statistics, genre_by_check)  # save number of genre to count
+      # save number of genre to count
     print("The number of title in that genre -", str(count))
 
 
@@ -61,10 +60,11 @@ def run_function(number_of_function):
     elif number_of_function == 5:
         print("Averange year is", str(reports.get_date_avg(file_with_statistics)))
     elif number_of_function == 6:
-        list_sort = reports.sort_abc(file_with_statistics)
-        print("List sorted:")
-        for game in list_sort:
-            print(game)
+        title = input("Please give a title to check: ")
+        game = reports.get_game(file_with_statistics, title)
+        print("Proporties:")
+        for value in game:
+            print(value)
     elif number_of_function == 7:
         list_of_genre = reports.get_genres(file_with_statistics)
         print("List of genre:")

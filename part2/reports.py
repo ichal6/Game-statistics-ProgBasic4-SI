@@ -71,7 +71,11 @@ def get_date_avg(file_name):
 
 
 def get_game(file_name, title):
-    pass
+    list_games = open_file(file_name)
+    for game in list_games:
+        if title == game[0]:
+            return game
+    return False
 
 
 # Bonus function
