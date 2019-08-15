@@ -1,4 +1,5 @@
 import sys
+import math
 # Report functions
 
 
@@ -59,7 +60,14 @@ def count_longest_title(file_name):
 
 
 def get_date_avg(file_name):
-    pass
+    list_games = open_file(file_name)
+    year_published = 0  # start from zero year
+    index = 0
+    for game in list_games:
+        year_published += int(game[2])
+        index += 1
+    averange = year_published / index
+    return math.ceil(averange)
 
 
 def get_game(file_name, title):
