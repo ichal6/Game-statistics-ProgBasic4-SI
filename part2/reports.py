@@ -31,7 +31,11 @@ def get_most_played(file_name):
 
 
 def sum_sold(file_name):
-    pass
+    list_games = open_file(file_name)
+    sold_copies = 0.0  # start from zero sold copies
+    for game in list_games:
+        sold_copies += float(game[1])
+    return sold_copies
 
 
 def get_selling_avg(file_name):
