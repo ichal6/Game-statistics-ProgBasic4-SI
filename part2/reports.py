@@ -39,7 +39,14 @@ def sum_sold(file_name):
 
 
 def get_selling_avg(file_name):
-    pass
+    list_games = open_file(file_name)
+    sold_copies = 0.0  # start from zero sold copies
+    index = 0.0
+    for game in list_games:
+        sold_copies += float(game[1])
+        index += 1.0
+    averange = sold_copies / index
+    return averange
 
 
 def count_longest_title(file_name):

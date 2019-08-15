@@ -55,7 +55,7 @@ def run_function(number_of_function):
     elif number_of_function == 2:
         print("All sold from statistics is", str(reports.sum_sold(file_with_statistics)))
     elif number_of_function == 3:
-        print("Title of the latest game is", str(reports.get_latest(file_with_statistics)))
+        print("Averange sold is", str(reports.get_selling_avg(file_with_statistics)))
     elif number_of_function == 4:
         option_4()
     elif number_of_function == 5:
