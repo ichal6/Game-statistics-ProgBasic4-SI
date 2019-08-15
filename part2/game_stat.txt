@@ -3,7 +3,7 @@ World of Warcraft	14	2004	RPG	Blizzard Entertainment
 Terraria	12	2011	Action-adventure	Re-Logic
 Diablo III	12	2012	RPG	Blizzard Entertainment
 Half-Life 2	12	2004	First-person shooter	Valve Corporation
-Counter-Strike	8	1999	First-person shooter	Valve Corporation
+Counter-Strike	12.5	1999	First-person shooter	Valve Corporation
 The Sims	11.24	2000	Simulation	Electronic Arts
 StarCraft	11	1998	Real-time strategy	Blizzard Entertainment
 Garry's Mod	10	2006	Sandbox	Facepunch Studios

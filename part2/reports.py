@@ -74,6 +74,8 @@ def get_game(file_name, title):
     list_games = open_file(file_name)
     for game in list_games:
         if title == game[0]:
+            game[1] = float(game[1])
+            game[2] = int(game[2])
             return game
     return False
 
