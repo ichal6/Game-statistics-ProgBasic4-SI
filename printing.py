@@ -76,7 +76,10 @@ def run_function(number_of_function):
         user_title = input("Please insert a title by search in file: ")
         print("Line number by title", str(reports.get_line_number_by_title(file_with_statistics, user_title)))
     elif number_of_function == 6:
-        print("Not implemention, yet")
+        list_sort = reports.sort_abc(file_with_statistics)
+        print("List sorted:")
+        for game in list_sort:
+            print(game)
     elif number_of_function == 7:
         list_of_genre = reports.get_genres(file_with_statistics)
         print("List of genre:")
