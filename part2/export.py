@@ -81,7 +81,7 @@ def option_4(file_with_statistics):
 
 def run_function(number_of_function, file_with_statistics):
     if number_of_function == 1:
-        answer_to_save = "Count games in statistics -" + str(reports.count_games(file_with_statistics))
+        answer_to_save = "The most played game -" + str(reports.get_most_played(file_with_statistics))
         return answer_to_save
     elif number_of_function == 2:
         answer_to_save = option_2(file_with_statistics)
