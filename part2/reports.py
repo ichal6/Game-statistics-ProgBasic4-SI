@@ -90,21 +90,34 @@ def count_grouped_by_genre(file_name):
 def get_date_ordered(file_name):
     list_games = open_file(file_name)
     list_title = []
+    #  sorting by alphabetical
     iter = 0
     size_table = len(list_games)
 
     while iter < size_table:
         j = 0
         while j <= size_table-2:
-            if list_games[j][2] < list_games[j+1][2]:
-                temp = list_games[j+1][2]
-                list_games[j+1][2] = list_games[j][2]
-                list_games[j][2] = temp
+            if list_games[j][0] > list_games[j+1][0]:
+                temp = list_games[j+1]
+                list_games[j+1] = list_games[j]
+                list_games[j] = temp
             j = j+1
         iter += 1
+    #  sorting by date
+    iter = 0
+    size_table = len(list_games)
 
+    while iter < size_table:
+        j = 0
+        while j <= size_table-2:
+            if int(list_games[j][2]) < int(list_games[j+1][2]):
+                temp = list_games[j+1]
+                list_games[j+1] = list_games[j]
+                list_games[j] = temp
+            j = j+1
+        iter += 1
+    # create list of title
     for game in list_games:
         list_title.append(game[0])
 
     return list_title
-    
