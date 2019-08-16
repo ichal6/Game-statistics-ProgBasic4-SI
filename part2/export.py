@@ -81,32 +81,37 @@ def option_4(file_with_statistics):
 
 def run_function(number_of_function, file_with_statistics):
     if number_of_function == 1:
-        answer_to_save = "The most played game -" + str(reports.get_most_played(file_with_statistics))
+        answer_to_save = "The most played game - " + str(reports.get_most_played(file_with_statistics))
         return answer_to_save
     elif number_of_function == 2:
-        answer_to_save = option_2(file_with_statistics)
+        answer_to_save = "All sold from statistics is " + str(reports.sum_sold(file_with_statistics))
         return answer_to_save
     elif number_of_function == 3:
-        return "Title of the latest game is " + str(reports.get_latest(file_with_statistics))
+        return "Averange sold is " + str(reports.get_selling_avg(file_with_statistics))
     elif number_of_function == 4:
-        return option_4(file_with_statistics)
+        answer_to_save = "Characters long in the longest title is " + str(reports.count_longest_title(file_with_statistics))
+        return answer_to_save
     elif number_of_function == 5:
-        user_title = input("Please insert a title by search in file: ")
-        return "Line number by title " + str(reports.get_line_number_by_title(file_with_statistics, user_title))
+        answer_to_save = "Averange year is " + str(reports.get_date_avg(file_with_statistics))
+        return answer_to_save
     elif number_of_function == 6:
-        list_sorted = reports.sort_abc(file_with_statistics)
-        games = "List sort:\n"
-        for game in list_sorted:
-            games += game + "\n"
-        return games
+        title = input("Please give a title to check: ")
+        game = reports.get_game(file_with_statistics, title)
+        proporties = "List sort:\n"
+        for proportie in game:
+            proporties += str(proportie) + "\n"
+        return proporties
     elif number_of_function == 7:
-        list_of_genre = reports.get_genres(file_with_statistics)
+        count_of_genre = reports.count_grouped_by_genre(file_with_statistics)
         genres = "List of genre:\n"
-        for genre in list_of_genre:
+        for genre in count_of_genre:
             genres += genre + "\n"
         return genres
     elif number_of_function == 8:
-        return "Release date of the top sold First-person shooter game is " + str(reports.when_was_top_sold_fps(file_with_statistics))
+        list_of_order = "Date ordered list is: "
+        games_title = reports.get_date_ordered(file_with_statistics)
+        for title in games_title:
+            list_of_order += title + "\n"
     elif number_of_function == 0:  # click zero to exit
         global is_exit
         is_exit = True
