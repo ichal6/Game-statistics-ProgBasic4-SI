@@ -84,7 +84,29 @@ def get_game(file_name, title):
 
 
 def count_grouped_by_genre(file_name):
-    pass
+    list_games = open_file(file_name)
+    dict_genre = {}
+
+    #  sorting by alphabetical by genre
+    iter = 0
+    size_table = len(list_games)
+
+    while iter < size_table:
+        j = 0
+        while j <= size_table-2:
+            if list_games[j][3] > list_games[j+1][3]:
+                temp = list_games[j+1]
+                list_games[j+1] = list_games[j]
+                list_games[j] = temp
+            j = j+1
+        iter += 1
+    for game in list_games:
+        if game[3] in dict_genre:
+            dict_genre[game[3]] += 1
+        else:
+            dict_genre[game[3]] = 1
+    
+    return dict_genre
 
 
 def get_date_ordered(file_name):
