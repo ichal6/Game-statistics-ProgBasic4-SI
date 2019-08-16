@@ -43,11 +43,6 @@ def user_input():
         return False
 
 
-def option_4():
-      # save number of genre to count
-    print("The number of title in that genre -", str(count))
-
-
 def run_function(number_of_function):
     if number_of_function == 1:
         print("The most played game -", str(reports.get_most_played(file_with_statistics)))
@@ -71,7 +66,10 @@ def run_function(number_of_function):
         for genre in list_of_genre:
             print(genre)
     elif number_of_function == 8:
-        print("Release date of the top sold First-person shooter game is", str(reports.when_was_top_sold_fps(file_with_statistics)))
+        print("Date ordered list is:")
+        games_title = reports.get_date_ordered(file_with_statistics)
+        for title in games_title:
+            print(title)
 
 
 main()  # run program

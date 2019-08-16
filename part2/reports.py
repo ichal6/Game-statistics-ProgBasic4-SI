@@ -106,3 +106,5 @@ def get_date_ordered(file_name):
     for game in list_games:
         list_title.append(game[0])
 
+    return list_title
+    
