@@ -1,5 +1,5 @@
 import os
-import time
+import sys
 import reports
 from menu import Welcome_Message
 from menu import Menu_Chossen
@@ -7,27 +7,35 @@ from menu import Correct_Input
 
 # Constas data:
 
-NUMBER_OF_MENU_BEGIN = 1
+NUMBER_OF_MENU_BEGIN = 0
 NUMBER_OF_MENU_END = 8
 
-# temporary value:
-
-file_with_statistics = "game_stat.txt"  # implement choose diffrent file name
-
 # Printing functions:
+
+is_exit = False
 
 
 def show_menu():
     print(Menu_Chossen)
 
 
-def main():
+def init():
+    if len(sys.argv) > 1:
+        file_with_statistics = sys.argv[1]
+    else:
+        file_with_statistics = "game_stat.txt"  # default value
+
+    while is_exit is False:
+        main(file_with_statistics)
+
+
+def main(file_with_statistics):
     os.system("clear")
     print(Welcome_Message)
     user_choice = False
     while user_choice is False:
         user_choice = user_input()
-    run_function(user_choice)
+    run_function(user_choice, file_with_statistics)
 
 
 def user_input():
@@ -43,7 +51,7 @@ def user_input():
         return False
 
 
-def run_function(number_of_function):
+def run_function(number_of_function, file_with_statistics):
     if number_of_function == 1:
         print("The most played game -", str(reports.get_most_played(file_with_statistics)))
     elif number_of_function == 2:
@@ -70,6 +78,11 @@ def run_function(number_of_function):
         games_title = reports.get_date_ordered(file_with_statistics)
         for title in games_title:
             print(title)
+    elif number_of_function == 0:
+        global is_exit
+        is_exit = True
+
+    input("Please enter to continue ")
 
 
-main()  # run program
+init()  # run program
