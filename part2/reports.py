@@ -105,7 +105,7 @@ def count_grouped_by_genre(file_name):
             dict_genre[game[3]] += 1
         else:
             dict_genre[game[3]] = 1
-    
+
     return dict_genre
 
 

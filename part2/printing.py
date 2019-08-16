@@ -61,10 +61,10 @@ def run_function(number_of_function):
         for value in game:
             print(value)
     elif number_of_function == 7:
-        list_of_genre = reports.get_genres(file_with_statistics)
+        count_of_genre = reports.count_grouped_by_genre(file_with_statistics)
         print("List of genre:")
-        for genre in list_of_genre:
-            print(genre)
+        for genre, value in count_of_genre.items():
+            print(genre, "-", value)
     elif number_of_function == 8:
         print("Date ordered list is:")
         games_title = reports.get_date_ordered(file_with_statistics)
